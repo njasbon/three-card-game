@@ -5,14 +5,17 @@ import Cards from './Cards.js';
 
 
 function App() {
-  const [cards, setCards] = useState(["queen", "king", "queen"]);
+  const [cards, setCards] = useState(["back", "king", "queen"]);
 
+  const flipCardByIndex = (i) => {
 
+  }
+  
   return (
     <div className="App">
       <h1>Hey Class! Let's make this three card game!</h1>
       <button>Start over/ Randomize</button>
-      <Cards cardOrder={cards} />
+      <Cards cardOrder={cards} flip={(i) => flipCardByIndex(i)}/>
     </div>
   );
 }
