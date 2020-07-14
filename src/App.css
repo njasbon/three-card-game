@@ -24,4 +24,5 @@ header{
 
 .card img{
   height: 40vh;
+  box-shadow: 2px solid grey;  
 }

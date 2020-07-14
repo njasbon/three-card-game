@@ -8,16 +8,13 @@ let faces = {back: back, king: king, queen: queen}
 //how are we going to flip the cards? - us onClick to flip the cards.
 //how do we keep track of which cards are flipped?
 
-const randomizeCards = () => {
-    Math.ceil(Math.random()*3)
-  }
 
 function Cards(props){
 //card is an element from the old array cards
-
+//onClick takes a function as an argument. We dont want to run a function, we want to pass a function. And you do this by passing the function in an anonymous function.
     let images = props.cardOrder.map((card, i, cards) => (
-        <div className="card" key={i}> <img src={faces[card]}/>
-
+        <div className="card" key={i}> 
+            <img src={card.faceDown ? back : faces[card.face]} onClick={() => props.flipper(i)}/>
         </div>
     ))
 
